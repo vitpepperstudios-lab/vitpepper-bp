@@ -532,6 +532,7 @@ const P = [
 
 const TOTAL = P.reduce((s,p) => s + p.budget, 0);
 const $ = id => document.getElementById(id);
+const L = p => p.id === "pepper" ? ' lang="en"' : ""; // Bebas Neue: Türkçe noktalı İ yerine I
 const reduce = matchMedia("(prefers-reduced-motion: reduce)");
 const finePtr = matchMedia("(hover: hover) and (pointer: fine)");
 
@@ -555,7 +556,7 @@ track.innerHTML = Array.from({length: SETS * N}, (_, k) => {
     <span class="s-top"><span class="s-no">0${i+1} / 0${N}</span><span class="s-when">${shortMY(p.start)} – ${shortMY(p.end)}</span></span>
     <span class="s-bot">
       <span class="s-kind">${p.kind}</span>
-      <span class="s-name">${p.name}</span>
+      <span class="s-name"${L(p)}>${p.name}</span>
       <span class="s-tag">${p.tag}</span>
       <span class="s-more"><span class="s-go">Detayları aç <span aria-hidden="true">→</span></span><span>${p.length} · ${p.months} ay</span></span>
     </span>
@@ -715,7 +716,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
 
 // Sonsuz isim bandı
 (function(){
-  const seg = P.map((p,i) => `<span class="${i % 2 ? "o" : "f"}">${p.name}</span><span class="dot"></span>`).join("");
+  const seg = P.map((p,i) => `<span class="${i % 2 ? "o" : "f"}"${L(p)}>${p.name}</span><span class="dot"></span>`).join("");
   const one = `<span>${seg}${seg}</span>`;
   $("mq").innerHTML = one + one;
 })();
@@ -736,7 +737,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
   $("cov").innerHTML = `
     <colgroup><col class="lab"><col><col><col></colgroup>
     <thead><tr><th scope="col"><span class="eb g">Proje</span></th>${P.map(p => `
-      <th scope="col"><button data-open="${p.id}"><img src="${IMG[p.img]}" alt="" style="object-position:${p.pos}"><span class="nm">${p.name}</span></button></th>`).join("")}</tr></thead>
+      <th scope="col"><button data-open="${p.id}"><img src="${IMG[p.img]}" alt="" style="object-position:${p.pos}"><span class="nm"${L(p)}>${p.name}</span></button></th>`).join("")}</tr></thead>
     <tbody>
       ${grp("Yayın ve dağıtım")}
       ${row("Vizyon", yes("vizyon"))}
@@ -788,6 +789,7 @@ function openPop(id){
   const p = P[i], half = money(p.budget/2);
   const pv = P[(i - 1 + N) % N], nx = P[(i + 1) % N];
   $("popName").textContent = p.name;
+  if (p.id === "pepper") $("popName").setAttribute("lang", "en"); else $("popName").removeAttribute("lang");
   $("popKind").textContent = p.kind;
   $("popPrev").querySelector(".nm").textContent = pv.name;
   $("popPrev").setAttribute("aria-label", "Önceki proje: " + pv.name);
@@ -812,7 +814,7 @@ function openPop(id){
       <div class="ph-img"><img src="${IMG[p.img]}" alt="" style="object-position:${p.heroPos}"></div>
       <div class="ph-txt">
         <div class="kind">${p.kind}</div>
-        <h2 id="popTitle">${p.name}</h2>
+        <h2 id="popTitle"${L(p)}>${p.name}</h2>
         <p class="tag">${p.tag}</p>
         <ul class="pts">${p.pts.map(([i,k,x]) => `<li><span class="bub">${ic(i)}</span><span class="tx"><b>${k}</b>${x}</span></li>`).join("")}</ul>
         <div class="chips">${p.chips.map(([i,x]) => `<span>${ic(i)}${x}</span>`).join("")}</div>
