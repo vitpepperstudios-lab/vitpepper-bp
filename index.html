@@ -5,10 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Vitpepper Studios animasyon projeleri: Lokum, Afacanlar Sınıfı ve The Pepper Kid. Takvim, bütçe ve kapsam.">
+<meta name="description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje.">
 <meta property="og:title" content="Vitpepper Studios · Animasyon Business Planı">
-<meta property="og:description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 9 ay, 3 proje.">
+<meta property="og:description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://vitpepperstudios-lab.github.io/vitpepper-bp/">
+<meta property="og:image" content="https://vitpepperstudios-lab.github.io/vitpepper-bp/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <title>Animasyon Business Planı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
@@ -307,17 +312,20 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
 .rev2 .s{margin-top:3px;font-size:13.5px;color:var(--text-2)}
 /* 9 aylık şerit */
 .strip{margin-top:22px;overflow-x:auto}
-.strip-in{min-width:340px;display:grid;grid-template-columns:repeat(9,minmax(0,1fr));column-gap:4px;row-gap:6px}
-.mo{text-align:center;font:700 12.5px var(--f-body);color:var(--text-2);padding-bottom:8px;border-bottom:1px solid var(--line)}
+.strip-in{min-width:330px}
+.mos{display:flex;gap:4px}
+.lanes{position:relative;height:106px;margin-top:8px}
+.lanes .b9{position:absolute;height:50px;margin:0}
+.mo{min-width:0;text-align:center;font:700 12.5px var(--f-body);color:var(--text-2);padding-bottom:8px;border-bottom:1px solid var(--line)}
 .mo small{display:block;font:500 10.5px var(--f-body);color:var(--muted);height:14px}
 .b9{display:flex;align-items:center;gap:10px;padding:8px;border-radius:12px;border:0;cursor:pointer;text-align:left;min-width:0;transition:transform .25s var(--ease)}
-.b9:hover{transform:translateY(-2px)}
+.b9:hover{filter:brightness(1.12)}
 .b9 img{width:38px;height:38px;border-radius:8px;object-fit:cover;flex:none}
 .b9 .tx{min-width:0}
 .b9 b{display:block;font:700 14px/1.2 var(--f-display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .b9 small{display:block;font-size:12px;opacity:.85}
-.b9.l{grid-column:1 / span 4;background:var(--red-fill);color:#fff}
-.b9.s{grid-column:5 / span 5;background:var(--s3);color:var(--text)}
+.b9.l{background:var(--red-fill);color:#fff}
+.b9.s{background:var(--s3);color:var(--text)}
 @media (max-width:820px){
   .pts .tx{font-size:15px}
   .money .v{font-size:28px}
@@ -410,7 +418,7 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
     <section class="row2" aria-labelledby="h-intro">
       <p class="lab">Plan</p>
       <div>
-        <h2 id="h-intro">9 ay, 3 proje</h2>
+        <h2 id="h-intro">5 ay, 3 proje</h2>
         <p class="sub">Önce Lokum. Sonra iki dizi birlikte.</p>
         <div class="strip"><div class="strip-in" id="strip"></div></div>
       </div>
@@ -476,8 +484,8 @@ const P = [
   {
     id:"lokum", name:"Lokum", kind:"Uzun metraj animasyon filmi", tag:"Sahiplenmek değil, seçmek",
     img:"lokum", pos:"50% 30%", heroPos:"50% 35%",
-    start:"2026-11-01", end:"2027-02-26", months:4, length:"~80 dk",
-    chips:[["film","Sinema filmi"],["clock","~80 dk"],["calendar-days","4 ayda hazır"],["users-round","Çocuk + aile"]],
+    start:"2026-11-01", end:"2027-01-05", months:2, length:"~80 dk",
+    chips:[["film","Sinema filmi"],["clock","~80 dk"],["calendar-days","2 ayda hazır"],["users-round","Çocuk + aile"]],
     pts:[
       ["cat","Kahraman","Fransız sarayından gelen asil bir kedi"],
       ["landmark","Yer","1536 İstanbul, Osmanlı sarayının mutfağı"],
@@ -488,20 +496,20 @@ const P = [
     ip:"Türk Telekom", budget:600000,
     share:25,
     covRight:"%25 gelir ortaklığı",
-    stages:["2026-11-01","2026-11-23","2026-12-07","2026-12-16","2027-02-01","2027-02-15","2027-02-22"],
+    stages:["2026-11-01","2026-11-13","2026-11-20","2026-11-26","2026-12-22","2026-12-30","2027-01-04"],
     ms:[
       ["2026-11-01","circle-check","Onay ve %50 ödeme","start"],
-      ["2026-12-06","palette","Görsel stil onayı"],
-      ["2026-12-15","clapperboard","Animatik onayı"],
-      ["2027-02-12","scissors","Kurgu kilitlenir"],
-      ["2027-02-26","flag-triangle-right","Teslim ve kalan %50","end"]
+      ["2026-11-19","palette","Görsel stil onayı"],
+      ["2026-11-25","clapperboard","Animatik onayı"],
+      ["2026-12-28","scissors","Kurgu kilitlenir"],
+      ["2027-01-05","flag-triangle-right","Teslim ve kalan %50","end"]
     ]
   },
   {
     id:"afacanlar", name:"Afacanlar Sınıfı", kind:"Animasyon dizisi · Komedi", tag:"Beş farklı enerji, tek bir sınıf ruhu",
     img:"afacan", pos:"50% 60%", heroPos:"50% 55%",
-    start:"2027-03-01", end:"2027-07-30", months:5, length:"10 bölüm × 11 dk",
-    chips:[["tv","Dizi"],["clock","10 bölüm × 11 dk"],["calendar-days","5 ayda hazır"],["users-round","Genç + aile"]],
+    start:"2027-01-06", end:"2027-03-31", months:3, length:"10 bölüm × 11 dk",
+    chips:[["tv","Dizi"],["clock","10 bölüm × 11 dk"],["calendar-days","3 ayda hazır"],["users-round","Genç + aile"]],
     pts:[
       ["school","Yer","Çamlıca'da bir lise, 11-H sınıfı"],
       ["users","Kahramanlar","5 arkadaş, 5 farklı karakter"],
@@ -513,20 +521,20 @@ const P = [
     ip:"Vitpepper", budget:450000,
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
-    stages:["2027-03-01","2027-03-22","2027-04-05","2027-04-26","2027-06-28","2027-07-12","2027-07-19"],
+    stages:["2027-01-06","2027-01-18","2027-01-26","2027-02-05","2027-03-12","2027-03-22","2027-03-25"],
     ms:[
-      ["2027-03-01","circle-check","Başlangıç ve %50 ödeme","start"],
-      ["2027-04-02","palette","Görsel stil seçimi"],
-      ["2027-04-22","clapperboard","Animatik onayı"],
-      ["2027-07-09","scissors","Kurgu kilitlenir"],
-      ["2027-07-30","flag-triangle-right","10 bölüm teslim, kalan %50","end"]
+      ["2027-01-06","circle-check","Başlangıç ve %50 ödeme","start"],
+      ["2027-01-25","palette","Görsel stil seçimi"],
+      ["2027-02-04","clapperboard","Animatik onayı"],
+      ["2027-03-19","scissors","Kurgu kilitlenir"],
+      ["2027-03-31","flag-triangle-right","10 bölüm teslim, kalan %50","end"]
     ]
   },
   {
     id:"pepper", name:"The Pepper Kid", kind:"Animasyon dizisi · 8 dünya", tag:"Bir karakter, sekiz dünya",
     img:"pepper", pos:"50% 28%", heroPos:"50% 30%",
-    start:"2027-03-01", end:"2027-07-30", months:5, length:"8 bölüm × 11 dk",
-    chips:[["tv","Dizi"],["clock","8 bölüm × 11 dk"],["calendar-days","5 ayda hazır"],["users-round","Çocuk + yetişkin"]],
+    start:"2027-01-06", end:"2027-03-31", months:3, length:"8 bölüm × 11 dk",
+    chips:[["tv","Dizi"],["clock","8 bölüm × 11 dk"],["calendar-days","3 ayda hazır"],["users-round","Çocuk + yetişkin"]],
     pts:[
       ["user","Kahraman","Pepper"],
       ["globe","Fikir","Her bölüm başka bir şehir ya da kültür"],
@@ -537,13 +545,13 @@ const P = [
     ip:"Vitpepper", budget:450000,
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
-    stages:["2027-03-01","2027-03-15","2027-04-12","2027-04-26","2027-06-28","2027-07-12","2027-07-19"],
+    stages:["2027-01-06","2027-01-14","2027-01-29","2027-02-05","2027-03-12","2027-03-22","2027-03-25"],
     ms:[
-      ["2027-03-01","circle-check","Başlangıç ve %50 ödeme","start"],
-      ["2027-04-09","palette","8 stilin onayı"],
-      ["2027-04-22","clapperboard","Animatik onayı"],
-      ["2027-07-09","scissors","Kurgu kilitlenir"],
-      ["2027-07-30","flag-triangle-right","8 bölüm teslim, kalan %50","end"]
+      ["2027-01-06","circle-check","Başlangıç ve %50 ödeme","start"],
+      ["2027-01-28","palette","8 stilin onayı"],
+      ["2027-02-04","clapperboard","Animatik onayı"],
+      ["2027-03-19","scissors","Kurgu kilitlenir"],
+      ["2027-03-31","flag-triangle-right","8 bölüm teslim, kalan %50","end"]
     ]
   }
 ];
@@ -741,11 +749,16 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
 
 // ---------- Ortak metinler ----------
 (function(){
-  const MO = [["Kas","2026"],["Ara",""],["Oca","2027"],["Şub",""],["Mar",""],["Nis",""],["May",""],["Haz",""],["Tem",""]];
-  const blk = (p, cls, row) => `<button class="b9 ${cls}" data-open="${p.id}" style="grid-row:${row}">
-      <img src="${IMG[p.img]}" alt="" style="object-position:${p.pos}"><span class="tx"><b>${p.name}</b><small>${p.months} ay</small></span></button>`;
-  $("strip").innerHTML = MO.map(([m,y]) => `<div class="mo" style="grid-row:1">${m}<small>${y}</small></div>`).join("")
-    + blk(P[0], "l", 2) + blk(P[1], "s", 2) + blk(P[2], "s", 3);
+  const T0 = D("2026-11-01"), T1 = D("2027-04-01"), span = T1 - T0;
+  const pc = s => ((D(s) - T0) / span * 100).toFixed(3) + "%";
+  const MO = [["Kas","2026","2026-11-01"],["Ara","","2026-12-01"],["Oca","2027","2027-01-01"],["Şub","","2027-02-01"],["Mar","","2027-03-01"]];
+  const head = MO.map(([m,y,s],i) => { const e = i < MO.length - 1 ? MO[i+1][2] : "2027-04-01";
+    return `<div class="mo" style="flex:${(D(e) - D(s)) / 86400000} 1 0">${m}<small>${y}</small></div>`; }).join("");
+  const blk = (p, cls, row) => {
+    const end = new Date(D(p.end).getTime() + 86400000).toISOString().slice(0,10);
+    return `<button class="b9 ${cls}" data-open="${p.id}" style="left:${pc(p.start)};width:calc(${pc(end)} - ${pc(p.start)} - 4px);top:${row * 56}px">
+      <img src="${IMG[p.img]}" alt="" style="object-position:${p.pos}"><span class="tx"><b>${p.name}</b><small>${p.months} ay</small></span></button>`; };
+  $("strip").innerHTML = `<div class="mos">${head}</div><div class="lanes">${blk(P[0],"l",0)}${blk(P[1],"s",0)}${blk(P[2],"s",1)}</div>`;
 })();
 
 (function(){
@@ -775,7 +788,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
     </tbody>`;
   $("total").innerHTML = `
     <div class="tbox"><div class="k">Toplam bütçe</div><div class="v">${money(TOTAL)}</div><div class="s">+ KDV · üç proje</div></div>
-    <div class="tbox"><div class="k">Toplam süre</div><div class="v">9 ay</div><div class="s">Kasım 2026 – Temmuz 2027</div></div>
+    <div class="tbox"><div class="k">Toplam süre</div><div class="v">5 ay</div><div class="s">Kasım 2026 – Mart 2027</div></div>
     <div class="tbox"><div class="k">Ödeme planı</div><div class="v">%50 · %50</div><div class="s">Her projede onayda %50 ön ödeme, kalan bakiye teslimde.</div></div>`;
 })();
 
