@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#000000">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje, aynı anda.">
+<meta name="description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje.">
 <meta property="og:title" content="Vitpepper Studios · Animasyon Business Planı">
-<meta property="og:description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje, aynı anda.">
+<meta property="og:description" content="Lokum, Afacanlar Sınıfı ve The Pepper Kid: 5 ay, 3 proje.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vitpepperstudios-lab.github.io/vitpepper-bp/">
 <meta property="og:image" content="https://vitpepperstudios-lab.github.io/vitpepper-bp/og.jpg">
@@ -449,7 +449,7 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
       <p class="lab">Plan</p>
       <div>
         <h2 id="h-intro">5 ay, 3 proje, aynı anda</h2>
-        <p class="sub">Üçü 1 Kasım'da başlar, 31 Mart'ta biter. Her projenin uzun süren işi farklı; ekip dengeli çalışır.</p>
+        <p class="sub">Üçü 1 Kasım'da başlar, 31 Mart'ta biter.</p>
         <div class="strip"><div class="strip-in" id="strip"></div></div>
       </div>
     </section>
@@ -527,7 +527,6 @@ const P = [
     share:25,
     covRight:"%25 gelir ortaklığı",
     stages:["2026-11-01","2026-12-14","2027-01-04","2027-01-18","2027-03-15","2027-03-22","2027-03-26"],
-    focus:{ fr:[0,2], seg:"Ön çalışma", icon:"landmark", t:"Uzun ön çalışma", w:"11 hafta", s:"Dönem araştırması, senaryo, saray ve Pera dünyası" },
     ms:[
       ["2026-11-01","circle-check","Onay ve %50 ödeme","start"],
       ["2026-12-31","palette","Görsel stil onayı"],
@@ -553,7 +552,6 @@ const P = [
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
     stages:["2026-11-01","2026-12-07","2026-12-21","2027-01-11","2027-03-01","2027-03-15","2027-03-22"],
-    focus:{ fr:[0,0], seg:"Mekân", icon:"school", t:"Uzun mekân tasarımı", w:"5 hafta", s:"Okulun bahçesi, koridoru, 11-H sınıfı ve kantini" },
     ms:[
       ["2026-11-01","circle-check","Onay ve %50 ödeme","start"],
       ["2026-12-18","palette","Görsel stil seçimi"],
@@ -578,7 +576,6 @@ const P = [
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
     stages:["2026-11-01","2026-11-16","2026-11-30","2026-12-14","2027-02-01","2027-02-15","2027-02-22"],
-    focus:{ fr:[6,6], seg:"Ses", icon:"music", t:"Uzun ses tasarımı", w:"5,5 hafta", s:"8 dünya, her birine özel müzik ve ses" },
     ms:[
       ["2026-11-01","circle-check","Onay ve %50 ödeme","start"],
       ["2026-11-27","palette","8 stilin onayı"],
@@ -789,25 +786,17 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
   const MO = [["Kas","2026","2026-11-01"],["Ara","","2026-12-01"],["Oca","2027","2027-01-01"],["Şub","","2027-02-01"],["Mar","","2027-03-01"]];
   const head = MO.map(([m,y,s],i) => { const e = i < MO.length - 1 ? MO[i+1][2] : "2027-04-01";
     return `<div class="mo" style="flex:${(D(e) - D(s)) / 86400000} 1 0">${m}<small>${y}</small></div>`; }).join("");
-  const GRP = ["pre","pre","pre","prod","post","post","post"];
   const row = p => {
-    const [fa, fb] = p.focus.fr;
-    const ends = p.stages.map((s,i) => i < 6 ? prevDay(p.stages[i+1]) : p.end);
-    const parts = [];
-    p.stages.forEach((s,i) => {
-      const g = GRP[i], f = i >= fa && i <= fb, last = parts[parts.length - 1];
-      if (last && last.g === g && last.f === f) { last.e = ends[i]; last.n++; }
-      else parts.push({ g, f, s, e: ends[i], first: i, n: 1 });
-    });
-    const label = q => q.f ? p.focus.seg : q.g === "pre" ? "Hazırlık" : q.g === "prod" ? "Video" : (q.first + q.n - 1 < 6 ? "Kurgu" : "Kurgu & ses");
-    const segs = parts.map(q => {
-      const l = pc(q.s), w = pc(nextDay(q.e)) - l;
-      return `<span class="sg ${q.g}${q.f ? " fx" : ""}" style="left:${l.toFixed(3)}%;width:calc(${w.toFixed(3)}% - 3px)">${q.f ? ic(p.focus.icon) : ""}<b>${label(q)}</b></span>`;
-    }).join("");
-    return `<button class="r9" data-open="${p.id}"><span class="r9n">${p.name}<small>${p.focus.t} · ${p.focus.w}</small></span><span class="bar9">${segs}</span></button>`;
+    const segs = [
+      ["pre",  p.stages[0], prevDay(p.stages[3]), "Hazırlık"],
+      ["prod", p.stages[3], prevDay(p.stages[4]), "Video"],
+      ["post", p.stages[4], p.end, "Kurgu & ses"]
+    ].map(([g,s,e,label]) => { const l = pc(s), w = pc(nextDay(e)) - l;
+      return `<span class="sg ${g}" style="left:${l.toFixed(3)}%;width:calc(${w.toFixed(3)}% - 3px)"><b>${label}</b></span>`; }).join("");
+    return `<button class="r9" data-open="${p.id}"><span class="r9n">${p.name}</span><span class="bar9">${segs}</span></button>`;
   };
   $("strip").innerHTML = `<div class="mos">${head}</div><div class="rows9">${P.map(row).join("")}</div>
-    <div class="lg9"><span><i class="pre"></i>Hazırlık</span><span><i class="prod"></i>Video üretimi</span><span><i class="post"></i>Kurgu & ses</span><span><i class="fx"></i>Uzun süren iş</span></div>`;
+    <div class="lg9"><span><i class="pre"></i>Hazırlık</span><span><i class="prod"></i>Video üretimi</span><span><i class="post"></i>Kurgu & ses</span></div>`;
 })();
 
 (function(){
@@ -904,7 +893,6 @@ function openPop(id){
     <div class="pin">
       ${extra}
       <div class="blk"><p class="eb" style="margin-bottom:16px">Takvim</p>${calendar(p)}
-        <div class="focus"><span class="bub">${ic(p.focus.icon)}</span><span><span class="k">Bu projede en uzun iş</span><b>${p.focus.t} · ${p.focus.w}</b><span class="s">${p.focus.s}</span></span></div>
       </div>
       <div class="cols">
         <div class="blk"><p class="eb">Önemli tarihler</p><h3>5 adımda</h3><ul class="ms2">${ms}</ul></div>
