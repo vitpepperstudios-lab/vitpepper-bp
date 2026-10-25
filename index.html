@@ -525,6 +525,7 @@ const P = [
     plat:{vizyon:1,tivibu:1,trt:1,global:1,merch:1},
     ip:"Türk Telekom", budget:600000,
     share:25,
+    license:"%100 Türk Telekom",
     covRight:"%25 gelir ortaklığı",
     stages:["2026-11-01","2026-12-14","2027-01-04","2027-01-18","2027-03-15","2027-03-22","2027-03-26"],
     ms:[
@@ -816,7 +817,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
       ${row("Merchandising", yes("merch"))}
       ${grp("Haklar")}
       ${row("Fikri hak (IP)", p => `<b>${p.ip}</b>`)}
-      ${row("Gelir payı", p => p.share ? `<b>Vitpepper %${p.share}</b>` : NONE)}
+      ${row("Gelir payı", p => p.share ? `<b>%${p.share}</b><small>Vitpepper</small>` : NONE)}
       ${row("Yayın hakkı", p => p.license ? `${p.license}` : NONE)}
       ${grp("Prodüksiyon")}
       ${row("Format", p => p.id === "lokum" ? `Film<small>~80 dk</small>` : `Dizi<small>${p.length}</small>`)}
@@ -903,10 +904,10 @@ function openPop(id){
           <h3 class="h3b">${p.share ? "Haklar ve gelir" : "Haklar"}</h3>
           <div class="rights">
             <div class="rt"><span class="bub">${ic("crown")}</span><span><span class="k">Fikri hak (IP)</span><b>${p.ip}</b></span></div>
+            <div class="rt"><span class="bub">${ic("tv")}</span><span><span class="k">Yayın hakkı</span><b>${p.license}</b></span></div>
             ${p.share ? `<div class="split2"><span class="k">Gelir paylaşımı</span>
               <div class="bar"><span class="tt">Türk Telekom<b>%${100 - p.share}</b></span><span class="vp">Vitpepper<b>%${p.share}</b></span></div>
-              <div class="s">Sinema, yayın ve ürün satışı dahil tüm gelir.</div></div>`
-            : `<div class="rt"><span class="bub">${ic("tv")}</span><span><span class="k">Yayın hakkı</span><b>${p.license}</b></span></div>`}
+              <div class="s">Sinema, yayın ve ürün satışı dahil tüm gelir.</div></div>` : ""}
           </div>
         </div>
       </div>
