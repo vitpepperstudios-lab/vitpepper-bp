@@ -314,7 +314,7 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
 .strip{margin-top:22px;overflow-x:auto}
 .strip-in{min-width:330px}
 .mos{display:flex;gap:4px}
-.lanes{position:relative;height:106px;margin-top:8px}
+.lanes{position:relative;height:162px;margin-top:8px}
 .lanes .b9{position:absolute;height:50px;margin:0}
 .mo{min-width:0;text-align:center;font:700 12.5px var(--f-body);color:var(--text-2);padding-bottom:8px;border-bottom:1px solid var(--line)}
 .mo small{display:block;font:500 10.5px var(--f-body);color:var(--muted);height:14px}
@@ -331,6 +331,8 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
   .money .v{font-size:28px}
   .b9{padding:6px;gap:8px}
   .b9 img{width:32px;height:32px}
+  .lanes .b9 img{display:none}
+  .lanes .b9{padding:6px 10px}
 }
 
 
@@ -419,7 +421,7 @@ table.cov{width:100%;min-width:350px;border-collapse:collapse;font-size:13px;tab
       <p class="lab">Plan</p>
       <div>
         <h2 id="h-intro">5 ay, 3 proje</h2>
-        <p class="sub">Önce Lokum. Sonra iki dizi birlikte.</p>
+        <p class="sub">En zor proje önce başlar. Hepsi Mart sonunda biter.</p>
         <div class="strip"><div class="strip-in" id="strip"></div></div>
       </div>
     </section>
@@ -484,8 +486,8 @@ const P = [
   {
     id:"lokum", name:"Lokum", kind:"Uzun metraj animasyon filmi", tag:"Sahiplenmek değil, seçmek",
     img:"lokum", pos:"50% 30%", heroPos:"50% 35%",
-    start:"2026-11-01", end:"2027-01-05", months:2, length:"~80 dk",
-    chips:[["film","Sinema filmi"],["clock","~80 dk"],["calendar-days","2 ayda hazır"],["users-round","Çocuk + aile"]],
+    start:"2026-11-01", end:"2027-02-26", months:4, length:"~80 dk",
+    chips:[["film","Sinema filmi"],["clock","~80 dk"],["calendar-days","4 ayda hazır"],["users-round","Çocuk + aile"]],
     pts:[
       ["cat","Kahraman","Fransız sarayından gelen asil bir kedi"],
       ["landmark","Yer","1536 İstanbul, Osmanlı sarayının mutfağı"],
@@ -496,19 +498,19 @@ const P = [
     ip:"Türk Telekom", budget:600000,
     share:25,
     covRight:"%25 gelir ortaklığı",
-    stages:["2026-11-01","2026-11-13","2026-11-20","2026-11-26","2026-12-22","2026-12-30","2027-01-04"],
+    stages:["2026-11-01","2026-11-23","2026-12-07","2026-12-16","2027-02-01","2027-02-15","2027-02-22"],
     ms:[
       ["2026-11-01","circle-check","Onay ve %50 ödeme","start"],
-      ["2026-11-19","palette","Görsel stil onayı"],
-      ["2026-11-25","clapperboard","Animatik onayı"],
-      ["2026-12-28","scissors","Kurgu kilitlenir"],
-      ["2027-01-05","flag-triangle-right","Teslim ve kalan %50","end"]
+      ["2026-12-06","palette","Görsel stil onayı"],
+      ["2026-12-15","clapperboard","Animatik onayı"],
+      ["2027-02-12","scissors","Kurgu kilitlenir"],
+      ["2027-02-26","flag-triangle-right","Teslim ve kalan %50","end"]
     ]
   },
   {
     id:"afacanlar", name:"Afacanlar Sınıfı", kind:"Animasyon dizisi · Komedi", tag:"Beş farklı enerji, tek bir sınıf ruhu",
     img:"afacan", pos:"50% 60%", heroPos:"50% 55%",
-    start:"2027-01-06", end:"2027-03-31", months:3, length:"10 bölüm × 11 dk",
+    start:"2027-01-04", end:"2027-03-31", months:3, length:"10 bölüm × 11 dk",
     chips:[["tv","Dizi"],["clock","10 bölüm × 11 dk"],["calendar-days","3 ayda hazır"],["users-round","Genç + aile"]],
     pts:[
       ["school","Yer","Çamlıca'da bir lise, 11-H sınıfı"],
@@ -521,11 +523,11 @@ const P = [
     ip:"Vitpepper", budget:450000,
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
-    stages:["2027-01-06","2027-01-18","2027-01-26","2027-02-05","2027-03-12","2027-03-22","2027-03-25"],
+    stages:["2027-01-04","2027-01-15","2027-01-25","2027-02-05","2027-03-12","2027-03-22","2027-03-25"],
     ms:[
-      ["2027-01-06","circle-check","Başlangıç ve %50 ödeme","start"],
-      ["2027-01-25","palette","Görsel stil seçimi"],
-      ["2027-02-04","clapperboard","Animatik onayı"],
+      ["2027-01-04","circle-check","Başlangıç ve %50 ödeme","start"],
+      ["2027-01-22","palette","Görsel stil seçimi"],
+      ["2027-02-03","clapperboard","Animatik onayı"],
       ["2027-03-19","scissors","Kurgu kilitlenir"],
       ["2027-03-31","flag-triangle-right","10 bölüm teslim, kalan %50","end"]
     ]
@@ -533,8 +535,8 @@ const P = [
   {
     id:"pepper", name:"The Pepper Kid", kind:"Animasyon dizisi · 8 dünya", tag:"Bir karakter, sekiz dünya",
     img:"pepper", pos:"50% 28%", heroPos:"50% 30%",
-    start:"2027-01-06", end:"2027-03-31", months:3, length:"8 bölüm × 11 dk",
-    chips:[["tv","Dizi"],["clock","8 bölüm × 11 dk"],["calendar-days","3 ayda hazır"],["users-round","Çocuk + yetişkin"]],
+    start:"2027-02-01", end:"2027-03-31", months:2, length:"8 bölüm × 11 dk",
+    chips:[["tv","Dizi"],["clock","8 bölüm × 11 dk"],["calendar-days","2 ayda hazır"],["users-round","Çocuk + yetişkin"]],
     pts:[
       ["user","Kahraman","Pepper"],
       ["globe","Fikir","Her bölüm başka bir şehir ya da kültür"],
@@ -545,12 +547,12 @@ const P = [
     ip:"Vitpepper", budget:450000,
     license:"2 yıl, exclusive",
     covRight:"2 yıl exclusive yayın",
-    stages:["2027-01-06","2027-01-14","2027-01-29","2027-02-05","2027-03-12","2027-03-22","2027-03-25"],
+    stages:["2027-02-01","2027-02-05","2027-02-17","2027-02-23","2027-03-19","2027-03-24","2027-03-26"],
     ms:[
-      ["2027-01-06","circle-check","Başlangıç ve %50 ödeme","start"],
-      ["2027-01-28","palette","8 stilin onayı"],
-      ["2027-02-04","clapperboard","Animatik onayı"],
-      ["2027-03-19","scissors","Kurgu kilitlenir"],
+      ["2027-02-01","circle-check","Başlangıç ve %50 ödeme","start"],
+      ["2027-02-16","palette","8 stilin onayı"],
+      ["2027-02-22","clapperboard","Animatik onayı"],
+      ["2027-03-23","scissors","Kurgu kilitlenir"],
       ["2027-03-31","flag-triangle-right","8 bölüm teslim, kalan %50","end"]
     ]
   }
@@ -758,7 +760,7 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { co
     const end = new Date(D(p.end).getTime() + 86400000).toISOString().slice(0,10);
     return `<button class="b9 ${cls}" data-open="${p.id}" style="left:${pc(p.start)};width:calc(${pc(end)} - ${pc(p.start)} - 4px);top:${row * 56}px">
       <img src="${IMG[p.img]}" alt="" style="object-position:${p.pos}"><span class="tx"><b>${p.name}</b><small>${p.months} ay</small></span></button>`; };
-  $("strip").innerHTML = `<div class="mos">${head}</div><div class="lanes">${blk(P[0],"l",0)}${blk(P[1],"s",0)}${blk(P[2],"s",1)}</div>`;
+  $("strip").innerHTML = `<div class="mos">${head}</div><div class="lanes">${blk(P[0],"l",0)}${blk(P[1],"s",1)}${blk(P[2],"s",2)}</div>`;
 })();
 
 (function(){
